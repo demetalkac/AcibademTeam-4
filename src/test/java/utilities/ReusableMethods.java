@@ -49,6 +49,8 @@ public class ReusableMethods {
         }
         Driver.getDriver().switchTo().window(origin);
     }
+
+
     //========Hover Over=====//
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
@@ -217,5 +219,7 @@ public class ReusableMethods {
         }
         return true;
     }
+
+
 
 }

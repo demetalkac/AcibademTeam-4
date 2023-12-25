@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -314,6 +315,16 @@ public class Driver {
         Driver.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
     }
 
+    public static void scrollEndJS() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 
+    }
+
+    //SwitchToWindow1
+    public static void switchToWindow2(int sayi) {
+        List<String> tumWindowHandles = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tumWindowHandles.get(sayi));
+    }
 
 }
