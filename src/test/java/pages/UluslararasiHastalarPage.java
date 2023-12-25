@@ -1,4 +1,4 @@
 package pages;
 
-public class UluslararasiHastalarPage {
+public class UluslararasiHastalarPage {//homepagedeki araliklar belirtildi
 }

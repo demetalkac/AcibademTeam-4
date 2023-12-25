@@ -1,5 +1,6 @@
 package pages;
 
-public class HastanelerPage {
+public class HastanelerPage {//homepagedeki araliklar belirtildi
+
 
 }
