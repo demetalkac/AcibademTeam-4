@@ -1,4 +1,33 @@
 package pages;
 
-public class DoktorlarPage {
+public class DoktorlarPage {//homepagedeki araliklar belirtildi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

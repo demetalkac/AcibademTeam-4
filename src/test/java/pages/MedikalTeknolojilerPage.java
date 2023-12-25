@@ -1,4 +1,4 @@
 package pages;
 
-public class MedikalTeknolojilerPage {
+public class MedikalTeknolojilerPage {//homepagedeki araliklar belirtildi
 }
