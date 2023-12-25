@@ -11,6 +11,12 @@ public class IletisimPage {
         @FindBy(xpath ="//a[@title='Yol Tarifi Alın']")
         public WebElement yolTarifiAlinirButton;
 
+       @FindBy(xpath = "(//span[.='Tümünü kabul et'])[1]")
+       public WebElement googleMapPopup;
+
+
+
+
 
 
 }

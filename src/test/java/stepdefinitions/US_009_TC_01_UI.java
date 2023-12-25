@@ -1,8 +1,7 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.*;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
+import org.junit.Assert;
 import pages.HomePage;
 import pages.IletisimPage;
 import utilities.ConfigReader;
@@ -13,7 +12,7 @@ public class US_009_TC_01_UI {
 
     HomePage homePage = new HomePage();
     IletisimPage iletisimPage = new IletisimPage();
-    Actions action = new Actions(Driver.getDriver());
+
 
     @Given("user goes to the {string}")
     public void user_goes_to_the(String url) {
@@ -29,9 +28,24 @@ public class US_009_TC_01_UI {
     @Given("user clicks on Yol Tarifi Alın button")
     public void user_clicks_on_yol_tarifi_alın_button() {
 
-       // action.scrollToElement(iletisimPage.yolTarifiAlinirButton).perform();
 
         iletisimPage.yolTarifiAlinirButton.click();
+    }
+
+    @Then("verify user should see Google Map page")
+    public void verify_user_should_see_google_map_page() {
+        ReusableMethods.waitFor(3);
+      // Driver.clickWithJS(iletisimPage.googleMapPopup);
+        Driver.switchToWindow2(1);
+        Driver.scrollEndJS();
+        iletisimPage.googleMapPopup.click();
+        ReusableMethods.waitFor(3);
+
+      // iletisimPage.googleMapPopup.click();
+       String actualTitle = Driver.getDriver().getTitle();
+        String expectedTitle = "kalkış: Konumunuz varış: Acıbadem Ataşehir Genel Müdürlük - Google Haritalar";
+        Assert.assertEquals(actualTitle,expectedTitle);
+
     }
 
 
