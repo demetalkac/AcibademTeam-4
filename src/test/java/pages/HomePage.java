@@ -55,6 +55,7 @@ public class HomePage {
     @FindBy(xpath ="//strong[text()='FİLTRELEME / SIRALAMA']")
     public WebElement filterandsorted;
 
+
     /*
 
 
