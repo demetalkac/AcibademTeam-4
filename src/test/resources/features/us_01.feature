@@ -5,8 +5,7 @@ Feature: US_001_TC_001
   Scenario:Kullanıcı ana sayfadaki arama motorunu kullanabilmeli
     Given Anasayfaya git
     And Size nasil yardimci olabiliriz?' yazisi gor
-    And Arama kutusuna tikla
-    And Aranacak kelime arama kutusuna yazilarak -Populer Aramalar-in gorunurlugu dogrula
+    And Aranacak kelime arama kutusuna yazilarak -Populer Aramalar-in gorunurlugu ve tiklanabilirligini dogrula
     And Aranacak kelime arama kutusuna yazilarak secilebilecek seceneklerin tiklanabilirligi dogrula
     And Aranacak kelime arama kutusuna yazilarak secilebilecek seceneklerin gorunurlugu dogrula
     And Arama kutusunda bulunan kelimenin enter tusu ile aranip aranamayacagi dogrula
