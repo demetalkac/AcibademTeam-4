@@ -45,7 +45,8 @@ public class HomePage {
     @FindBy(xpath ="//span[@class='close open']")
     public WebElement closeopen;
 
-
+    @FindBy(xpath ="//a[@href='/ilgi-alani/zaturre-pnomoni/']")
+    public WebElement populeraramazaturre;
 
     //US02 TC01
 
@@ -55,36 +56,35 @@ public class HomePage {
     @FindBy(xpath ="//strong[text()='FİLTRELEME / SIRALAMA']")
     public WebElement filterandsorted;
 
-    /*
+    @FindBy(xpath ="(//i[@class='user-layout'])[1]")
+    public WebElement enyakinkonum;
 
+    @FindBy(xpath ="(//i[@class='user-layout'])[2]")
+    public WebElement alfabetik;
 
-    @FindBy(xpath ="")
-    public WebElement ;
+    @FindBy(xpath ="(//i[@class='user-layout'])[3]")
+    public WebElement tumu;
 
-    @FindBy(xpath ="")
-    public WebElement ;
+    @FindBy(xpath ="(//i[@class='user-layout'])[4]")
+    public WebElement hastane;
 
-    @FindBy(xpath ="")
-    public WebElement ;
+    @FindBy(xpath ="(//i[@class='user-layout'])[5]")
+    public WebElement tipmerkezi;
 
-    @FindBy(xpath ="")
-    public WebElement ;
+    @FindBy(xpath ="(//i[@class='user-layout'])[6]")
+    public WebElement hpofisleri;
 
-    */
+    @FindBy(xpath ="(//i[@class='user-layout'])[7]")
+    public WebElement yurtdisi;
 
+    @FindBy(xpath ="//div [@id='locationStatus']")
+    public WebElement dahaiyideneyimicinkonum;
 
+    @FindBy(xpath ="(//a[@href='/hastane/adana-hastanesi/'])[2]")
+    public WebElement gorulensecenek;
+/*
 
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 //sonrakiler-fatma hoca
