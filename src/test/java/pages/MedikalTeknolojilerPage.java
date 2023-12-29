@@ -15,4 +15,11 @@ public class MedikalTeknolojilerPage {//homepagedeki araliklar belirtildi
 
     @FindBy(xpath = "//select[@id='technologyType']")
     public WebElement ddmCihaz;
+
+    @FindBy(xpath = " (//*[@title='MEDİKAL TEKNOLOJİLER'])[1]")
+    public WebElement medikalTeknolojiler;
+
+
+    @FindBy(xpath = "(//*[@class='text'])[16]")
+    public WebElement cihazMr;
 }
