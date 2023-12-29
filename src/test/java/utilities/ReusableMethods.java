@@ -38,6 +38,7 @@ public class ReusableMethods {
         FileUtils.copyFile(source, finalDestination);
         return target;
     }
+
     //========Switching Window=====//
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
@@ -56,6 +57,7 @@ public class ReusableMethods {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();
     }
+
     //==========Return a list of string given a list of Web Element====////
     public static List<String> getElementsText(List<WebElement> list) {
         List<String> elemTexts = new ArrayList<>();
@@ -66,6 +68,7 @@ public class ReusableMethods {
         }
         return elemTexts;
     }
+
     //========Returns the Text of the element given an element locator==//
     public static List<String> getElementsText(By locator) {
         List<WebElement> elems = Driver.getDriver().findElements(locator);
@@ -77,6 +80,7 @@ public class ReusableMethods {
         }
         return elemTexts;
     }
+
     //   HARD WAIT WITH THREAD.SLEEP
 //   waitFor(5);  => waits for 5 second
     public static void waitFor(int sec) {
@@ -86,23 +90,28 @@ public class ReusableMethods {
             e.printStackTrace();
         }
     }
+
     //===============Explicit Wait==============//
     public static WebElement waitForVisibility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
+
     public static WebElement waitForVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
     public static WebElement waitForClickablility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
     public static WebElement waitForClickablility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
+
     public static void clickWithTimeOut(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -113,6 +122,7 @@ public class ReusableMethods {
             }
         }
     }
+
     public static void waitForPageToLoad(long timeout) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
@@ -128,6 +138,7 @@ public class ReusableMethods {
                     "Timeout waiting for Page Load Request to complete after " + timeout + " seconds");
         }
     }
+
     //======Fluent Wait====//
     public static WebElement fluentWait(final WebElement webElement, int timeout) {
         //FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver()).withTimeout(timeinsec, TimeUnit.SECONDS).pollingEvery(timeinsec, TimeUnit.SECONDS);
@@ -141,13 +152,16 @@ public class ReusableMethods {
         });
         return element;
     }
+
     /**
      * Performs double click action on an element
+     *
      * @param element
      */
     public static void doubleClick(WebElement element) {
         new Actions(Driver.getDriver()).doubleClick(element).build().perform();
     }
+
     /**
      * @param element
      * @param check
@@ -163,8 +177,10 @@ public class ReusableMethods {
             }
         }
     }
+
     /**
      * Selects a random value from a dropdown list and returns the selected Web Element
+     *
      * @param select
      * @return
      */
@@ -178,12 +194,13 @@ public class ReusableMethods {
 
     /**
      * This method creates a past or future date. H.Sozeri.
+     *
      * @param format
      * @param atMostYear
      * @param choice
      * @return
      */
-    public static String setPastOrFutureDate (String format, int atMostYear, String choice) {
+    public static String setPastOrFutureDate(String format, int atMostYear, String choice) {
         int day = (int) (Math.random() * 366 + 1);
         int month = (int) (Math.random() * 13 + 1);
         int year = (int) (Math.random() * atMostYear + 1);
@@ -207,7 +224,7 @@ public class ReusableMethods {
     }
 
     /**
-     *This method checks if a date is in expected date format. H.Sozeri.
+     * This method checks if a date is in expected date format. H.Sozeri.
      */
     public static boolean isValid(String dateFormat, String dateStr) {
         DateFormat sdf = new SimpleDateFormat(dateFormat);
@@ -220,6 +237,27 @@ public class ReusableMethods {
         return true;
     }
 
+    public static void scroll(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public static void visibleWait(WebElement element, int sayi) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(sayi));
+        wait.until(ExpectedConditions.visibilityOf(element));
 
 
+    }
+
+    //VisibleElementLocator Wait
+    public static WebElement visibleWait(By locator, int sayi) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(sayi));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+    }
+
+    public static void ddmVisibleText(WebElement ddm, String secenek) {
+        Select select = new Select(ddm);
+        select.selectByVisibleText(secenek);
+    }
 }
